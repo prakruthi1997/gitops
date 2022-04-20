@@ -4,10 +4,10 @@ metadata:
   name: ec2-test
 spec:
   forProvider:
-    imageId: ami-0d2986f2e8c0f7d01
-    region: us-west-2
+    imageId: ami-0b36cd6786bcfe120
+    region: ap-south-1a
     instanceType: t2.micro
-    subnetId: subnet-0004980271afe643d
+    subnetId: subnet-02a920b0ac7f736e5
   writeConnectionSecretToRef: 
     name: ec2-secret
     namespace: crossplane-system
