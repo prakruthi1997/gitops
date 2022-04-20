@@ -5,9 +5,9 @@ metadata:
 spec:
   forProvider:
     imageId: ami-0b36cd6786bcfe120
-    region: ap-south-1a
+    region: us-west-2
     instanceType: t2.micro
-    subnetId: subnet-02a920b0ac7f736e5
+    subnetId: subnet-0c79b62729500396e
   writeConnectionSecretToRef: 
     name: ec2-secret
     namespace: crossplane-system
