@@ -7,8 +7,7 @@ spec:
     imageId: ami-0d2986f2e8c0f7d01
     region: us-west-2
     instanceType: t2.micro
-    subnetIdRef:
-      name: nsl-chatbot-public-us-west-2b
+    subnetId: subnet-0004980271afe643d
   writeConnectionSecretToRef: 
     name: ec2-secret
     namespace: crossplane-system
