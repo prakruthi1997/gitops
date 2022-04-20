@@ -1,0 +1,3 @@
+#delete the secret key
+*.conf
+creds.conf

@@ -1,0 +1,17 @@
+apiVersion: ec2.aws.crossplane.io/v1alpha1
+kind: Instance
+metadata:
+  name: ec2-test
+spec:
+  forProvider:
+    imageId: ami-0d2986f2e8c0f7d01
+    region: ap-south-1
+    instanceType: t2.micro
+    subnetIdRef:
+      name: subnet1
+  writeConnectionSecretToRef: 
+    name: ec2-secret
+    namespace: crossplane-system
+  deletionPolicy: Delete 
+  providerConfigRef:
+    name: aws-provider
