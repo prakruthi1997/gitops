@@ -6,7 +6,7 @@ spec:
   forProvider:
     imageId: ami-0b36cd6786bcfe120
     region: us-west-2
-    instanceType: t2.large
+    instanceType: t2.small
     subnetId: subnet-0c79b62729500396e
   writeConnectionSecretToRef: 
     name: ec2-secret
