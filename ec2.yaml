@@ -1,12 +1,12 @@
 apiVersion: ec2.aws.crossplane.io/v1alpha1
 kind: Instance
 metadata:
-  name: ec2
+  generateName: ec2-test
 spec:
   forProvider:
     imageId: ami-0b36cd6786bcfe120
     region: us-west-2
-    instanceType: t2.large
+    instanceType: t2.small
     subnetId: subnet-03b838520ab061442
   writeConnectionSecretToRef: 
     name: ec2-secret
