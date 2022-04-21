@@ -1,0 +1,42 @@
+apiVersion: eks.aws.crossplane.io/v1beta1
+kind: Cluster
+metadata:
+  name: eks-cluster
+spec:
+  deletionPolicy: Delete
+  providerConfigRef:
+    name: aws-provider
+  forProvider:
+    region: us-west-2
+    resourcesVpcConfig:
+      subnetIds:
+        - subnet-03b838520ab061442
+    roleArn: arn:aws:iam::154520726085:role/chatbot
+
+apiVersion: eks.aws.crossplane.io/v1alpha1
+kind: NodeGroup
+metadata:
+  name: spot-compute-node-group
+spec:
+  deletionPolicy: Delete
+  providerConfigRef:
+    name: aws-provider
+  writeConnectionSecretToRef:
+    name: compute-group-secrets
+    namespace: crossplane-system
+  forProvider:
+    amiType: AL2_ARM_64
+    capacityType: SPOT
+    clusterNameRef:
+      name: eks-cluster
+    instanceTypes:
+      - m6g.medium
+      - m6g.large
+    region: us-west-2
+    scalingConfig:
+      desiredSize: 1
+      minSize: 1
+      maxSize: 2
+    nodeRole: arn:aws:iam::154520726085:role/chatbot
+    subnets:
+      - subnet-03b838520ab061442
