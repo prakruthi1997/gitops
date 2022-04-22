@@ -8,7 +8,7 @@ spec:
   deletionPolicy: Delete
   forProvider:
     cidrBlock: 10.0.1.0/16
-    region: ap-south-1
+    region: up-west-2
   writeConnectionSecretToRef: 
     name: vpc-secret
     namespace: crossplane-system
