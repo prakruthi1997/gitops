@@ -1,7 +1,7 @@
 apiVersion: ec2.aws.crossplane.io/v1alpha1
 kind: Instance
 metadata:
-  generateName: ec2-test
+  name: ec2-test
 spec:
   forProvider:
     imageId: ami-0b36cd6786bcfe120
