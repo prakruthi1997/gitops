@@ -1,0 +1,16 @@
+# VPC
+
+apiVersion: ec2.aws.crossplane.io/v1beta1
+kind: VPC
+metadata:
+  name: vpc2
+spec:
+  deletionPolicy: Delete
+  forProvider:
+    cidrBlock: 10.0.0.0/16
+    region: us-west-2
+  writeConnectionSecretToRef: 
+    name: vpc-secret
+    namespace: crossplane-system
+  providerConfigRef:
+    name: aws-provider
